@@ -8,7 +8,13 @@ import java.util.Optional;
 
 public interface CategoryRepository extends JpaRepository<Category, Long> {
 
-    List<Category> findByStatus(String status);
+	List<Category> findByStatus(String status);
 
-    Optional<Category> findByNameIgnoreCase(String name);
+	Optional<Category> findByNameIgnoreCase(String name);
+
+	List<Category> findByTenant_Id(Long tenantId);
+
+	List<Category> findByTenant_IdAndStatus(Long tenantId, String status);
+
+	Optional<Category> findByTenant_IdAndNameIgnoreCase(Long tenantId, String name);
 }

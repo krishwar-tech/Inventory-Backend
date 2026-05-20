@@ -10,6 +10,10 @@ import java.util.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.inventory.management.entity.Tenant;
+import com.inventory.management.repository.TenantRepository;
+import com.inventory.management.config.TenantContext;
+
 @Service
 public class MasterService {
 
@@ -17,13 +21,21 @@ public class MasterService {
 	private final SupplierRepository supplierRepo;
 	private final CustomerRepository customerRepo;
 	private final SaleItemRepository itemRepo;
+	private final TenantRepository tenantRepo;
 
 	public MasterService(CategoryRepository categoryRepo, SupplierRepository supplierRepo,
-			CustomerRepository customerRepo, ProductRepository productRepo, SaleItemRepository itemRepo) {
+			CustomerRepository customerRepo, ProductRepository productRepo, SaleItemRepository itemRepo,
+			TenantRepository tenantRepo) {
+
 		this.categoryRepo = categoryRepo;
+
 		this.supplierRepo = supplierRepo;
+
 		this.customerRepo = customerRepo;
+
 		this.itemRepo = itemRepo;
+
+		this.tenantRepo = tenantRepo;
 	}
 
 	private static final Logger log = LoggerFactory.getLogger(MasterService.class);
@@ -34,7 +46,7 @@ public class MasterService {
 
 		log.info("Fetching active categories");
 
-		List<Category> categories = categoryRepo.findByStatus("ACTIVE");
+		List<Category> categories = categoryRepo.findByTenant_IdAndStatus(TenantContext.getTenantId(), "ACTIVE");
 
 		List<SaleItem> soldItems = itemRepo.findAll();
 
@@ -74,6 +86,10 @@ public class MasterService {
 	public Category addCategory(Category c) {
 
 		log.info("Creating category : {}", c.getName());
+
+		Tenant tenant = tenantRepo.findById(TenantContext.getTenantId()).orElseThrow();
+
+		c.setTenant(tenant);
 
 		c.setStatus("ACTIVE");
 
@@ -142,7 +158,7 @@ public class MasterService {
 
 		log.info("Fetching suppliers");
 
-		List<Supplier> suppliers = supplierRepo.findByStatus("ACTIVE");
+		List<Supplier> suppliers = supplierRepo.findByTenant_IdAndStatus(TenantContext.getTenantId(), "ACTIVE");
 
 		log.info("Total suppliers fetched : {}", suppliers.size());
 
@@ -152,6 +168,10 @@ public class MasterService {
 	public Supplier addSupplier(Supplier s) {
 
 		log.info("Adding supplier : {}", s.getName());
+
+		Tenant tenant = tenantRepo.findById(TenantContext.getTenantId()).orElseThrow();
+
+		s.setTenant(tenant);
 
 		s.setStatus("ACTIVE");
 
@@ -208,7 +228,7 @@ public class MasterService {
 
 		log.info("Fetching customers");
 
-		List<Customer> customers = customerRepo.findByStatus("ACTIVE");
+		List<Customer> customers = customerRepo.findByTenant_IdAndStatus(TenantContext.getTenantId(), "ACTIVE");
 
 		log.info("Total customers fetched : {}", customers.size());
 
@@ -218,6 +238,10 @@ public class MasterService {
 	public Customer addCustomer(Customer c) {
 
 		log.info("Adding customer : {}", c.getName());
+
+		Tenant tenant = tenantRepo.findById(TenantContext.getTenantId()).orElseThrow();
+
+		c.setTenant(tenant);
 
 		c.setStatus("ACTIVE");
 

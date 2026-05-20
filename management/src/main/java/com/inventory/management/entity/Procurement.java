@@ -33,4 +33,8 @@ public class Procurement {
     @ManyToOne
     @JoinColumn(name = "supplier_id")
     private Supplier supplier;
+    
+    @ManyToOne
+    @JoinColumn(name = "tenant_id")
+    private Tenant tenant;
 }

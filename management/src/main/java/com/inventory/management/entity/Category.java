@@ -22,4 +22,8 @@ public class Category {
     @OneToMany(mappedBy = "category")
     @JsonIgnore   
     private List<Product> products;
+    
+    @ManyToOne
+    @JoinColumn(name = "tenant_id")
+    private Tenant tenant;
 }

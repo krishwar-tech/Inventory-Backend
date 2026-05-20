@@ -4,7 +4,7 @@ import com.inventory.management.entity.Product;
 import com.inventory.management.entity.Procurement;
 import com.inventory.management.entity.Sale;
 import com.inventory.management.entity.SaleItem;
-
+import com.inventory.management.config.TenantContext;
 import com.inventory.management.repository.ProductRepository;
 import com.inventory.management.repository.ProcurementRepository;
 import com.inventory.management.repository.SaleItemRepository;
@@ -41,10 +41,16 @@ public class ReportService {
 		log.info("Dashboard analytics loading started");
 
 		Map<String, Object> map = new HashMap<>();
+		List<Product> products = productRepo.findByTenant_Id(TenantContext.getTenantId());
+		List<SaleItem> items = new ArrayList<>();
 
-		List<Product> products = productRepo.findAll();
+		for (Sale sale : saleRepo.findByTenant_Id(TenantContext.getTenantId())) {
 
-		List<SaleItem> items = itemRepo.findAll();
+			if (sale.getItems() != null) {
+
+				items.addAll(sale.getItems());
+			}
+		}
 
 		log.info("Fetched products : {}", products.size());
 
@@ -123,7 +129,7 @@ public class ReportService {
 		map.put("lowStockCount", lowStock.size());
 
 		// TSP
-		
+
 		Map<String, Integer> productSales = new HashMap<>();
 
 		for (SaleItem item : items) {
@@ -150,8 +156,8 @@ public class ReportService {
 		map.put("topSellingData", topProducts);
 
 		log.info("Top selling products calculated");
-		
-		//PIE CHART
+
+		// PIE CHART
 
 		Map<String, Integer> categoryMap = new HashMap<>();
 
@@ -212,7 +218,7 @@ public class ReportService {
 
 		List<Map<String, Object>> salesRows = new ArrayList<>();
 
-		List<Sale> allSales = saleRepo.findAll();
+		List<Sale> allSales = saleRepo.findByTenant_Id(TenantContext.getTenantId());
 
 		int unitsSold = 0;
 
@@ -253,7 +259,7 @@ public class ReportService {
 
 		List<Map<String, Object>> purchaseRows = new ArrayList<>();
 
-		List<Procurement> allProcurements = procurementRepo.findAll();
+		List<Procurement> allProcurements = procurementRepo.findByTenant_Id(TenantContext.getTenantId());
 
 		int unitsPurchased = 0;
 

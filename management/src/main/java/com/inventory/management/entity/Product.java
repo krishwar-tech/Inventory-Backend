@@ -40,4 +40,8 @@ public class Product {
     @JoinColumn(name = "category_id")
     @JsonIgnoreProperties("products")
     private Category category;
+    
+    @ManyToOne
+    @JoinColumn(name = "tenant_id")
+    private Tenant tenant;
 }

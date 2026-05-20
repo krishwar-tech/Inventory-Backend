@@ -17,4 +17,8 @@ public class Settings {
 
     private String storeName;
     private String currencySymbol;
+    
+    @ManyToOne
+    @JoinColumn(name = "tenant_id")
+    private Tenant tenant;
 }

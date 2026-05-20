@@ -7,10 +7,15 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.inventory.management.entity.Tenant;
+import com.inventory.management.repository.TenantRepository;
+import com.inventory.management.config.TenantContext;
+
 import java.math.BigDecimal;
 import java.util.*;
 
 import org.slf4j.Logger;
+import com.inventory.management.exception.*;
 import org.slf4j.LoggerFactory;
 
 @Service
@@ -27,11 +32,13 @@ public class ProductService {
 
 	private final InventoryRepository inventoryRepo;
 
+	private final TenantRepository tenantRepo;
+
 	private static final Logger log = LoggerFactory.getLogger(ProductService.class);
 
 	public ProductService(ProductRepository productRepo, CategoryRepository categoryRepo,
-			ProcurementRepository procurementRepo, InventoryService inventoryService,
-			InventoryRepository inventoryRepo) {
+			ProcurementRepository procurementRepo, InventoryService inventoryService, InventoryRepository inventoryRepo,
+			TenantRepository tenantRepo) {
 
 		this.productRepo = productRepo;
 
@@ -40,8 +47,9 @@ public class ProductService {
 		this.procurementRepo = procurementRepo;
 
 		this.inventoryRepo = inventoryRepo;
-	}
 
+		this.tenantRepo = tenantRepo;
+	}
 	// Product Creation
 
 	public Product save(Product p) {
@@ -54,6 +62,10 @@ public class ProductService {
 
 		applyDefaults(p);
 
+		Tenant tenant = tenantRepo.findById(TenantContext.getTenantId()).orElseThrow();
+
+		p.setTenant(tenant);
+
 		Product saved = productRepo.save(p);
 
 		log.info("Product created successfully : {} | SKU : {}", saved.getName(), saved.getSku());
@@ -65,7 +77,7 @@ public class ProductService {
 
 		log.info("Fetching all products");
 
-		List<Product> products = productRepo.findAll();
+		List<Product> products = productRepo.findByTenant_Id(TenantContext.getTenantId());
 
 		log.info("Total products fetched : {}", products.size());
 
@@ -76,11 +88,11 @@ public class ProductService {
 
 		log.info("Fetching product by ID : {}", id);
 
-		return productRepo.findById(id).orElseThrow(() -> {
+		return productRepo.findByIdAndTenant_Id(id, TenantContext.getTenantId()).orElseThrow(() -> {
 
-			log.error("Product not found : {}", id);
+			log.error("Product not found for tenant : {}", id);
 
-			return new RuntimeException("Product not found");
+			return new ProductNotFoundException("Product not found");
 		});
 	}
 
@@ -88,14 +100,13 @@ public class ProductService {
 
 		log.info("Searching product by barcode : {}", code);
 
-		Product product = productRepo.findByBarcode(code).orElse(null);
+		Product product = productRepo.findByTenant_IdAndBarcode(TenantContext.getTenantId(), code).orElse(null);
 
 		if (product == null) {
 
 			log.warn("No product found for barcode : {}", code);
-		}
 
-		else {
+		} else {
 
 			log.info("Barcode matched product : {}", product.getName());
 		}
@@ -107,21 +118,21 @@ public class ProductService {
 
 		log.info("Fetching active products");
 
-		return productRepo.findByStatus("ACTIVE");
+		return productRepo.findByTenant_IdAndStatus(TenantContext.getTenantId(), "ACTIVE");
 	}
 
 	public List<Product> getPending() {
 
 		log.info("Fetching pending products");
 
-		return productRepo.findByStatus("PENDING");
+		return productRepo.findByTenant_IdAndStatus(TenantContext.getTenantId(), "PENDING");
 	}
 
 	public Map<String, Object> stats() {
 
 		log.info("Generating product statistics");
 
-		List<Product> all = productRepo.findAll();
+		List<Product> all = productRepo.findByTenant_Id(TenantContext.getTenantId());
 
 		long active = all.stream().filter(p -> "ACTIVE".equals(p.getStatus())).count();
 
@@ -149,7 +160,7 @@ public class ProductService {
 
 		log.info("Fetching products by category : {}", categoryId);
 
-		return productRepo.findByCategory_Id(categoryId);
+		return productRepo.findByTenant_IdAndCategory_Id(TenantContext.getTenantId(), categoryId);
 	}
 
 	public List<Product> search(String keyword) {
@@ -158,10 +169,10 @@ public class ProductService {
 
 		if (keyword == null || keyword.isBlank()) {
 
-			return productRepo.findAll();
+			return productRepo.findByTenant_Id(TenantContext.getTenantId());
 		}
 
-		return productRepo.findByNameContainingIgnoreCase(keyword);
+		return productRepo.findByTenant_IdAndNameContainingIgnoreCase(TenantContext.getTenantId(), keyword);
 	}
 
 	// Product Update
@@ -283,7 +294,7 @@ public class ProductService {
 		if (barcode == null || barcode.isBlank())
 			return;
 
-		Optional<Product> exists = productRepo.findByBarcode(barcode);
+		Optional<Product> exists = productRepo.findByTenant_IdAndBarcode(TenantContext.getTenantId(), barcode);
 
 		if (exists.isPresent()) {
 
@@ -291,7 +302,7 @@ public class ProductService {
 
 				log.error("Duplicate barcode detected : {}", barcode);
 
-				throw new RuntimeException("Barcode already exists");
+				throw new DuplicateResourceException("Barcode already exists");
 			}
 		}
 	}

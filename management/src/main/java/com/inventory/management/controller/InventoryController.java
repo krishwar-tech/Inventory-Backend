@@ -5,7 +5,7 @@ import com.inventory.management.entity.Product;
 import com.inventory.management.repository.InventoryRepository;
 import com.inventory.management.repository.ProductRepository;
 import com.inventory.management.service.InventoryService;
-
+import com.inventory.management.config.TenantContext;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,12 +28,18 @@ public class InventoryController {
 
 	@GetMapping
 	public List<Product> all() {
-		return productRepo.findAll();
+
+		Long tenantId = TenantContext.getTenantId();
+
+		return productRepo.findByTenant_Id(tenantId);
 	}
 
 	@GetMapping("/history")
 	public List<InventoryTransaction> history() {
-		return inventoryRepo.findAll();
+
+		Long tenantId = TenantContext.getTenantId();
+
+		return inventoryRepo.findByTenant_IdOrderByIdDesc(tenantId);
 	}
 
 	@PostMapping("/damage")

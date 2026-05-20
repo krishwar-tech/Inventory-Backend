@@ -8,6 +8,8 @@ import com.inventory.management.repository.SaleRepository;
 
 import org.springframework.stereotype.Service;
 
+import com.inventory.management.config.TenantContext;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -39,9 +41,9 @@ public class FinanceService {
 
 		Map<String, Object> map = new HashMap<>();
 
-		List<Sale> sales = saleRepo.findAll();
+		List<Sale> sales = saleRepo.findByTenant_Id(TenantContext.getTenantId());
 
-		List<Procurement> procurements = procurementRepo.findAll();
+		List<Procurement> procurements = procurementRepo.findByTenant_Id(TenantContext.getTenantId());
 
 		log.info("Fetched sales records : {}", sales.size());
 

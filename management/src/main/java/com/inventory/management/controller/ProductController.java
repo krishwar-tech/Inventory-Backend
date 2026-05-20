@@ -5,6 +5,7 @@ import com.inventory.management.entity.Product;
 
 import com.inventory.management.repository.CategoryRepository;
 import com.inventory.management.repository.ProductRepository;
+import com.inventory.management.config.TenantContext;
 
 import com.inventory.management.service.ProductService;
 
@@ -208,7 +209,10 @@ public class ProductController {
 
 		Map<String, Object> res = new HashMap<>();
 
-		Optional<Product> product = productRepo.findByBarcode(barcode.trim());
+		Optional<Product> product =productRepo.findByTenant_IdAndBarcode(
+			    TenantContext.getTenantId(),
+			    barcode.trim()
+			);
 
 		if (product.isPresent()) {
 

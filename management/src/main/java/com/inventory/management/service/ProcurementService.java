@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
+import com.inventory.management.exception.*;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -19,6 +19,10 @@ import java.util.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.inventory.management.entity.Tenant;
+import com.inventory.management.repository.TenantRepository;
+import com.inventory.management.config.TenantContext;
 
 @Service
 public class ProcurementService {
@@ -33,9 +37,11 @@ public class ProcurementService {
 
 	private final CategoryRepository categoryRepo;
 
+	private final TenantRepository tenantRepo;
+
 	private static final Logger log = LoggerFactory.getLogger(ProcurementService.class);
 
-	public ProcurementService(ProcurementRepository repo, ProductRepository productRepo,
+	public ProcurementService(ProcurementRepository repo, TenantRepository tenantRepo, ProductRepository productRepo,
 			SupplierRepository supplierRepo, InventoryService inventoryService, CategoryRepository categoryRepo) {
 
 		this.repo = repo;
@@ -47,9 +53,11 @@ public class ProcurementService {
 		this.inventoryService = inventoryService;
 
 		this.categoryRepo = categoryRepo;
+
+		this.tenantRepo = tenantRepo;
 	}
 
-	// Manual Procurement 
+	// Manual Procurement
 
 	@Transactional
 	public Procurement save(Long productId, Long supplierId, Integer qty, Double costPrice) {
@@ -60,14 +68,14 @@ public class ProcurementService {
 
 			log.error("Product not found : {}", productId);
 
-			return new RuntimeException("Product not found");
+			return new ProductNotFoundException("Product not found");
 		});
 
 		Supplier supplier = supplierRepo.findById(supplierId).orElseThrow(() -> {
 
 			log.error("Supplier not found : {}", supplierId);
 
-			return new RuntimeException("Supplier not found");
+			return new SupplierNotFoundException("Supplier not found");
 		});
 
 		Procurement p = new Procurement();
@@ -94,6 +102,10 @@ public class ProcurementService {
 
 		p.setDate(LocalDate.now());
 
+		Tenant tenant = tenantRepo.findById(TenantContext.getTenantId()).orElseThrow();
+
+		p.setTenant(tenant);
+
 		Procurement saved = repo.save(p);
 
 		inventoryService.increaseStock(product, qty, "PURCHASE", "Procurement");
@@ -104,7 +116,7 @@ public class ProcurementService {
 	}
 
 	// Excel Import
-	
+
 	@Transactional
 	public Map<String, Object> importExcel(MultipartFile file) {
 
@@ -127,7 +139,6 @@ public class ProcurementService {
 			Row headerRow = sheet.getRow(0);
 
 			Map<String, Integer> columns = new HashMap<>();
-
 
 			for (Cell cell : headerRow) {
 
@@ -234,23 +245,29 @@ public class ProcurementService {
 
 					if (!categoryName.isBlank()) {
 
-						category = categoryRepo.findByNameIgnoreCase(categoryName).orElseGet(() -> {
+						Tenant tenant = tenantRepo.findById(TenantContext.getTenantId()).orElseThrow();
 
-							log.info("Creating new category : {}", categoryName);
+						category = categoryRepo
+								.findByTenant_IdAndNameIgnoreCase(TenantContext.getTenantId(), categoryName)
+								.orElseGet(() -> {
 
-							Category c = new Category();
+									log.info("Creating new category : {}", categoryName);
 
-							c.setName(categoryName);
+									Category c = new Category();
 
-							c.setStatus("ACTIVE");
+									c.setName(categoryName);
 
-							return categoryRepo.save(c);
-						});
+									c.setStatus("ACTIVE");
+
+									c.setTenant(tenant);
+
+									return categoryRepo.save(c);
+								});
 					}
 
 					// Product Check
-
-					Optional<Product> existing = productRepo.findByNameIgnoreCase(productName);
+					Optional<Product> existing = productRepo
+							.findByTenant_IdAndNameIgnoreCase(TenantContext.getTenantId(), productName);
 
 					Product product;
 
@@ -286,6 +303,7 @@ public class ProcurementService {
 					else {
 
 						product = new Product();
+						Tenant tenant = tenantRepo.findById(TenantContext.getTenantId()).orElseThrow();
 
 						product.setName(productName);
 
@@ -301,6 +319,8 @@ public class ProcurementService {
 
 						product.setStatus("PENDING");
 
+						product.setTenant(tenant);
+
 						product = productRepo.save(product);
 
 						newProducts++;
@@ -310,19 +330,24 @@ public class ProcurementService {
 
 					// Supplier
 
-					Supplier supplier = supplierRepo.findByName(supplierName).orElseGet(() -> {
+					Tenant tenant = tenantRepo.findById(TenantContext.getTenantId()).orElseThrow();
 
-						log.info("Creating supplier : {}", supplierName);
+					Supplier supplier = supplierRepo
+							.findByTenant_IdAndNameIgnoreCase(TenantContext.getTenantId(), supplierName)
+							.orElseGet(() -> {
 
-						Supplier s = new Supplier();
+								log.info("Creating supplier : {}", supplierName);
 
-						s.setName(supplierName);
+								Supplier s = new Supplier();
 
-						s.setStatus("ACTIVE");
+								s.setName(supplierName);
 
-						return supplierRepo.save(s);
-					});
+								s.setStatus("ACTIVE");
 
+								s.setTenant(tenant);
+
+								return supplierRepo.save(s);
+							});
 					// Procurement Entry
 
 					Procurement p = new Procurement();
@@ -348,6 +373,8 @@ public class ProcurementService {
 					p.setPaymentStatus("UNPAID");
 
 					p.setDate(LocalDate.now());
+
+					p.setTenant(tenant);
 
 					repo.save(p);
 
@@ -384,18 +411,16 @@ public class ProcurementService {
 		return res;
 	}
 
-
 	public List<Procurement> getAll() {
 
 		log.info("Fetching procurement history");
 
-		List<Procurement> list = repo.findAll();
+		List<Procurement> list = repo.findByTenant_Id(TenantContext.getTenantId());
 
 		log.info("Total procurement records : {}", list.size());
 
 		return list;
 	}
-
 	// Procurement Delete
 
 	@Transactional
@@ -407,7 +432,7 @@ public class ProcurementService {
 
 			log.error("Procurement not found : {}", id);
 
-			return new RuntimeException("Procurement not found");
+			return new ProcurementNotFoundException("Procurement not found");
 		});
 
 		repo.delete(p);
@@ -426,7 +451,7 @@ public class ProcurementService {
 
 			log.error("Procurement not found : {}", id);
 
-			return new RuntimeException("Procurement not found");
+			return new ProcurementNotFoundException("Procurement not found");
 		});
 
 		BigDecimal payAmount = BigDecimal.valueOf(amount);

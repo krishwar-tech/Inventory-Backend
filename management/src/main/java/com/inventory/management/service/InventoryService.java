@@ -9,10 +9,15 @@ import com.inventory.management.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.inventory.management.entity.Tenant;
+import com.inventory.management.repository.TenantRepository;
+import com.inventory.management.config.TenantContext;
+
 import java.time.LocalDateTime;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.inventory.management.exception.*;
 
 @Service
 public class InventoryService {
@@ -20,14 +25,18 @@ public class InventoryService {
 	private final ProductRepository productRepo;
 
 	private final InventoryRepository inventoryRepo;
+	private final TenantRepository tenantRepo;
 
 	private static final Logger log = LoggerFactory.getLogger(InventoryService.class);
 
-	public InventoryService(ProductRepository productRepo, InventoryRepository inventoryRepo) {
+	public InventoryService(ProductRepository productRepo, InventoryRepository inventoryRepo,
+			TenantRepository tenantRepo) {
 
 		this.productRepo = productRepo;
 
 		this.inventoryRepo = inventoryRepo;
+
+		this.tenantRepo = tenantRepo;
 	}
 
 	// Stock Increase
@@ -75,7 +84,7 @@ public class InventoryService {
 
 			log.error("Insufficient stock for {} | Available : {} | Requested : {}", product.getName(), stock, qty);
 
-			throw new RuntimeException(product.getName() + " insufficient stock");
+			throw new InsufficientStockException(product.getName() + " insufficient stock");
 		}
 
 		stock -= qty;
@@ -121,6 +130,10 @@ public class InventoryService {
 		t.setRemarks(remarks);
 
 		t.setCreatedAt(LocalDateTime.now());
+
+		Tenant tenant = tenantRepo.findById(TenantContext.getTenantId()).orElseThrow();
+
+		t.setTenant(tenant);
 
 		inventoryRepo.save(t);
 

@@ -25,4 +25,8 @@ public class InventoryTransaction {
 	@JoinColumn(name = "product_id")
 	@JsonIgnoreProperties({ "category" })
 	private Product product;
+	
+	@ManyToOne
+	@JoinColumn(name = "tenant_id")
+	private Tenant tenant;
 }

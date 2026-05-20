@@ -16,4 +16,8 @@ public class Supplier {
     private String name;
 
     private String status = "ACTIVE";
+
+    @ManyToOne
+    @JoinColumn(name = "tenant_id")
+    private Tenant tenant;
 }

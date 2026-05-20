@@ -8,11 +8,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import com.inventory.management.exception.*;
 import java.time.LocalDateTime;
 import java.util.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.inventory.management.entity.Tenant;
+import com.inventory.management.repository.TenantRepository;
+import com.inventory.management.config.TenantContext;
 
 @Service
 public class BillingService {
@@ -21,13 +26,15 @@ public class BillingService {
 	private final SaleItemRepository itemRepo;
 	private final ProductRepository productRepo;
 	private final InventoryService inventoryService;
+	private final TenantRepository tenantRepo;
 
 	public BillingService(SaleRepository saleRepo, SaleItemRepository itemRepo, ProductRepository productRepo,
-			InventoryService inventoryService) {
+			InventoryService inventoryService, TenantRepository tenantRepo) {
 		this.saleRepo = saleRepo;
 		this.itemRepo = itemRepo;
 		this.productRepo = productRepo;
 		this.inventoryService = inventoryService;
+		this.tenantRepo = tenantRepo;
 	}
 
 	private static final Logger log = LoggerFactory.getLogger(BillingService.class);
@@ -88,6 +95,10 @@ public class BillingService {
 
 		sale.setCardPaid(card);
 
+		Tenant tenant = tenantRepo.findById(TenantContext.getTenantId()).orElseThrow();
+
+		sale.setTenant(tenant);
+
 		Sale savedSale = saleRepo.save(sale);
 
 		List<SaleItem> items = new ArrayList<>();
@@ -99,7 +110,7 @@ public class BillingService {
 			try {
 
 				product = productRepo.findById(item.getProductId())
-						.orElseThrow(() -> new RuntimeException("Product not found"));
+						.orElseThrow(() -> new ProductNotFoundException("Product not found"));
 
 				log.info("Selling product : {} | Qty : {}", product.getName(), item.getQty());
 
@@ -114,7 +125,7 @@ public class BillingService {
 
 				log.warn("Inactive product billing attempt : {}", product.getName());
 
-				throw new RuntimeException(product.getName() + " inactive");
+				throw new ProductNotFoundException(product.getName() + " inactive");
 			}
 
 			inventoryService.decreaseStock(product, item.getQty(), "SALE", "Sold");
@@ -140,7 +151,8 @@ public class BillingService {
 
 	public InvoiceResponse getInvoice(Long saleId) {
 
-		Sale sale = saleRepo.findById(saleId).orElseThrow(() -> new RuntimeException("Sale not found"));
+		Sale sale = saleRepo.findById(saleId).orElseThrow(() ->
+	    new ProductNotFoundException("Sale not found"));
 
 		List<SaleItem> saleItems = itemRepo.findAll().stream().filter(i -> i.getSale().getId().equals(saleId)).toList();
 
