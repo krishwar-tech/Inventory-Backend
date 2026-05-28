@@ -22,7 +22,7 @@ public class CorsConfig {
 
 						.allowedOrigins(
 								"http://localhost:5173",
-								"https://your-netlify-site.netlify.app"
+								"https://dulcet-flan-922c7c.netlify.app"
 						)
 
 						.allowedMethods(
