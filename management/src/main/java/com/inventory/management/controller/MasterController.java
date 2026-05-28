@@ -15,7 +15,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/masters")
-@CrossOrigin("*")
 public class MasterController {
 
 	private final MasterService service;

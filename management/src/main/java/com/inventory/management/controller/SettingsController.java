@@ -12,7 +12,6 @@ import com.inventory.management.service.SettingsService;
 
 @RestController
 @RequestMapping("/api/settings")
-@CrossOrigin("*")
 public class SettingsController {
 
 	private final SettingsService service;

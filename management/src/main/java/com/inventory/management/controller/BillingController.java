@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/api/billing")
-@CrossOrigin("*")
 public class BillingController {
 
     private final BillingService service;

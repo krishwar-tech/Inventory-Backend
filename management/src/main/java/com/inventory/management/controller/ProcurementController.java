@@ -19,7 +19,6 @@ import com.inventory.management.service.ProcurementService;
 
 @RestController
 @RequestMapping("/api/procurement")
-@CrossOrigin("*")
 public class ProcurementController {
 
 	private final ProcurementService service;

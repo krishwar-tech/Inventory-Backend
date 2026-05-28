@@ -11,7 +11,6 @@ import com.inventory.management.service.FinanceService;
 
 @RestController
 @RequestMapping("/api/finance")
-@CrossOrigin("*")
 public class FinanceController {
 
 	private final FinanceService service;

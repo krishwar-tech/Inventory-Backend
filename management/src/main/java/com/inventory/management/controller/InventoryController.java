@@ -18,7 +18,6 @@ import com.inventory.management.service.InventoryService;
 
 @RestController
 @RequestMapping("/api/inventory")
-@CrossOrigin("*")
 public class InventoryController {
 
 	private final InventoryService inventoryService;

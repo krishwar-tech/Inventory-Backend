@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/api/reports")
-@CrossOrigin("*")
 public class ReportController {
 
     private final ReportService service;
