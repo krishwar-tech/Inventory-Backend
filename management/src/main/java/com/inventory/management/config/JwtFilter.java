@@ -30,26 +30,30 @@ public class JwtFilter extends OncePerRequestFilter {
 			FilterChain filterChain)
 			throws ServletException, IOException {
 
+		if (request.getMethod().equalsIgnoreCase("OPTIONS")) {
+			response.setStatus(HttpServletResponse.SC_OK);
+			filterChain.doFilter(request, response);
+			return;
+		}
+
 		String authHeader =
 				request.getHeader("Authorization");
 
 		if (authHeader != null &&
 				authHeader.startsWith("Bearer ")) {
 
-			String token =
-					authHeader.substring(7);
+			String token = authHeader.substring(7);
 
 			try {
 
 				Claims claims =
 						jwtUtil.extractAllClaims(token);
 
-				Object tenantObj =
-						claims.get("tenantId");
+				Integer tenantIdInt =
+						claims.get("tenantId", Integer.class);
 
 				Long tenantId =
-						Long.valueOf(
-								tenantObj.toString());
+						tenantIdInt.longValue();
 
 				String username =
 						claims.getSubject();
