@@ -3740,3 +3740,743 @@ This generated password is for development use only. Your security configuration
 2026-05-28 14:59:09 [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-05-28 14:59:09 [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2026-05-28 14:59:09 [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-05-28 15:01:16 [INFO] c.i.management.ManagementApplication - Starting ManagementApplication using Java 17.0.12 with PID 5196 (D:\INV\INV-BACKEND\management\target\classes started by WELCOME in D:\INV\INV-BACKEND\management)
+2026-05-28 15:01:16 [DEBUG] c.i.management.ManagementApplication - Running with Spring Boot v4.0.5, Spring v7.0.6
+2026-05-28 15:01:16 [INFO] c.i.management.ManagementApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-28 15:01:16 [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-05-28 15:01:16 [INFO] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-05-28 15:01:18 [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-28 15:01:18 [INFO] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 131 ms. Found 11 JPA repository interfaces.
+2026-05-28 15:01:19 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-28 15:01:19 [INFO] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-28 15:01:19 [INFO] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-05-28 15:01:19 [INFO] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2722 ms
+2026-05-28 15:01:19 [DEBUG] c.i.management.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-05-28 15:01:19 [INFO] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-28 15:01:20 [INFO] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-05-28 15:01:20 [INFO] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-28 15:01:20 [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-05-28 15:01:28 [INFO] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1d854e9f
+2026-05-28 15:01:28 [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-05-28 15:01:32 [INFO] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://zephyr.proxy.rlwy.net:37048/railway]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.4
+	Default catalog/schema: railway/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-28 15:01:34 [INFO] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-28 15:01:39 [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-28 15:01:40 [INFO] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-28 15:01:48 [WARN] o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-28 15:01:48 [WARN] o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: a8499664-7d36-41dd-a182-6f8ae8412b15
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-05-28 15:01:48 [INFO] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-05-28 15:01:49 [DEBUG] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-05-28 15:01:49 [INFO] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-28 15:01:49 [INFO] c.i.management.ManagementApplication - Started ManagementApplication in 33.887 seconds (process running for 35.301)
+2026-05-28 15:02:04 [INFO] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-28 15:02:04 [INFO] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-28 15:02:04 [INFO] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-05-28 15:02:04 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/login
+2026-05-28 15:02:04 [WARN] o.s.w.s.h.HandlerMappingIntrospector - Cache miss for REQUEST dispatch to '/api/auth/login' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2026-05-28 15:02:04 [DEBUG] o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2026-05-28 15:02:04 [DEBUG] o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-05-28 15:02:04 [DEBUG] o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2026-05-28 15:02:06 [WARN] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.inventory.management.exception.UserNotFoundException: Invalid username]
+2026-05-28 15:03:03 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/auth/register
+2026-05-28 15:03:03 [DEBUG] o.s.security.web.FilterChainProxy - Securing POST /api/auth/register
+2026-05-28 15:03:03 [DEBUG] o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-05-28 15:03:03 [DEBUG] o.s.security.web.FilterChainProxy - Secured POST /api/auth/register
+2026-05-28 15:03:10 [DEBUG] o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2026-05-28 15:03:10 [DEBUG] o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-05-28 15:03:10 [DEBUG] o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2026-05-28 15:03:12 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/products
+2026-05-28 15:03:12 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:03:12 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/reports/dashboard
+2026-05-28 15:03:12 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/reports/dashboard
+2026-05-28 15:03:12 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/reports/dashboard
+2026-05-28 15:03:12 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/reports/dashboard
+2026-05-28 15:03:12 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:03:12 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:03:12 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:03:12 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loading started
+2026-05-28 15:03:13 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 0
+2026-05-28 15:03:13 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:03:13 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:03:13 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:03:13 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:03:13 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched products : 0
+2026-05-28 15:03:13 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched sale items : 0
+2026-05-28 15:03:13 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated total revenue : 0.0
+2026-05-28 15:03:13 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated inventory value : 0.0
+2026-05-28 15:03:13 [INFO] c.i.m.service.impl.ReportServiceImpl - Top selling products calculated
+2026-05-28 15:03:13 [INFO] c.i.m.service.impl.ReportServiceImpl - Category analytics prepared
+2026-05-28 15:03:13 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 0
+2026-05-28 15:03:14 [INFO] c.i.m.service.impl.ReportServiceImpl - Sales report generated | Transactions : 0
+2026-05-28 15:03:14 [INFO] c.i.m.service.impl.ReportServiceImpl - Purchase report generated | Records : 0
+2026-05-28 15:03:14 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loaded successfully
+2026-05-28 15:03:14 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/reports/dashboard
+2026-05-28 15:03:14 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/reports/dashboard
+2026-05-28 15:03:14 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loading started
+2026-05-28 15:03:16 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched products : 0
+2026-05-28 15:03:16 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched sale items : 0
+2026-05-28 15:03:16 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated total revenue : 0.0
+2026-05-28 15:03:16 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated inventory value : 0.0
+2026-05-28 15:03:16 [INFO] c.i.m.service.impl.ReportServiceImpl - Top selling products calculated
+2026-05-28 15:03:16 [INFO] c.i.m.service.impl.ReportServiceImpl - Category analytics prepared
+2026-05-28 15:03:16 [INFO] c.i.m.service.impl.ReportServiceImpl - Sales report generated | Transactions : 0
+2026-05-28 15:03:17 [INFO] c.i.m.service.impl.ReportServiceImpl - Purchase report generated | Records : 0
+2026-05-28 15:03:17 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loaded successfully
+2026-05-28 15:03:45 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/inventory/history
+2026-05-28 15:03:45 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/inventory
+2026-05-28 15:03:45 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/inventory
+2026-05-28 15:03:45 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/inventory/history
+2026-05-28 15:03:45 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/inventory/history
+2026-05-28 15:03:45 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/inventory
+2026-05-28 15:03:45 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/inventory/history
+2026-05-28 15:03:45 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/inventory
+2026-05-28 15:03:46 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/inventory/history
+2026-05-28 15:03:46 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/inventory
+2026-05-28 15:03:46 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/inventory/history
+2026-05-28 15:03:46 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/inventory
+2026-05-28 15:03:48 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/masters/categories
+2026-05-28 15:03:48 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/products/stats
+2026-05-28 15:03:48 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/products/stats
+2026-05-28 15:03:48 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:03:48 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/masters/categories
+2026-05-28 15:03:48 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:03:48 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:03:48 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:03:48 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products/stats
+2026-05-28 15:03:48 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/categories
+2026-05-28 15:03:48 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products/stats
+2026-05-28 15:03:48 [INFO] c.i.m.controller.ProductController - API Product Stats
+2026-05-28 15:03:48 [INFO] c.i.m.s.impl.ProductServiceImpl - Generating product statistics
+2026-05-28 15:03:48 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/categories
+2026-05-28 15:03:48 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching active categories
+2026-05-28 15:03:48 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 0
+2026-05-28 15:03:48 [INFO] c.i.m.s.impl.ProductServiceImpl - Stats generated successfully
+2026-05-28 15:03:48 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products/stats
+2026-05-28 15:03:48 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:03:48 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:03:48 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products/stats
+2026-05-28 15:03:48 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:03:48 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:03:48 [INFO] c.i.m.controller.ProductController - API Product Stats
+2026-05-28 15:03:48 [INFO] c.i.m.s.impl.ProductServiceImpl - Generating product statistics
+2026-05-28 15:03:49 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 0
+2026-05-28 15:03:50 [INFO] c.i.m.s.impl.ProductServiceImpl - Stats generated successfully
+2026-05-28 15:03:50 [INFO] c.i.m.service.impl.MasterServiceImpl - Total active categories fetched : 0
+2026-05-28 15:03:50 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/categories
+2026-05-28 15:03:50 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/categories
+2026-05-28 15:03:50 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching active categories
+2026-05-28 15:03:51 [INFO] c.i.m.service.impl.MasterServiceImpl - Total active categories fetched : 0
+2026-05-28 15:03:51 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/finance/dashboard
+2026-05-28 15:03:51 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/finance/dashboard
+2026-05-28 15:03:51 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/finance/dashboard
+2026-05-28 15:03:51 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/finance/dashboard
+2026-05-28 15:03:51 [INFO] c.i.m.s.impl.FinanceServiceImpl - Finance dashboard calculation started
+2026-05-28 15:03:52 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/masters/suppliers
+2026-05-28 15:03:52 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/masters/suppliers
+2026-05-28 15:03:52 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/suppliers
+2026-05-28 15:03:52 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/suppliers
+2026-05-28 15:03:52 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching suppliers
+2026-05-28 15:03:53 [INFO] c.i.m.s.impl.FinanceServiceImpl - Fetched sales records : 0
+2026-05-28 15:03:53 [INFO] c.i.m.s.impl.FinanceServiceImpl - Fetched procurement records : 0
+2026-05-28 15:03:53 [INFO] c.i.m.s.impl.FinanceServiceImpl - Sales calculation completed | Total Sales : 0
+2026-05-28 15:03:53 [INFO] c.i.m.s.impl.FinanceServiceImpl - Calculated payable amount : 0
+2026-05-28 15:03:53 [INFO] c.i.m.s.impl.FinanceServiceImpl - Net business calculated : 0
+2026-05-28 15:03:53 [INFO] c.i.m.s.impl.FinanceServiceImpl - Finance dashboard loaded successfully
+2026-05-28 15:03:53 [INFO] c.i.m.s.impl.FinanceServiceImpl - Cash : 0 | UPI : 0 | Card : 0
+2026-05-28 15:03:53 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/finance/dashboard
+2026-05-28 15:03:53 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/finance/dashboard
+2026-05-28 15:03:53 [INFO] c.i.m.s.impl.FinanceServiceImpl - Finance dashboard calculation started
+2026-05-28 15:03:53 [INFO] c.i.m.service.impl.MasterServiceImpl - Total suppliers fetched : 0
+2026-05-28 15:03:53 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/suppliers
+2026-05-28 15:03:53 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/categories
+2026-05-28 15:03:53 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/suppliers
+2026-05-28 15:03:53 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching suppliers
+2026-05-28 15:03:53 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/categories
+2026-05-28 15:03:53 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching active categories
+2026-05-28 15:03:53 [INFO] c.i.m.s.impl.FinanceServiceImpl - Fetched sales records : 0
+2026-05-28 15:03:53 [INFO] c.i.m.s.impl.FinanceServiceImpl - Fetched procurement records : 0
+2026-05-28 15:03:53 [INFO] c.i.m.s.impl.FinanceServiceImpl - Sales calculation completed | Total Sales : 0
+2026-05-28 15:03:53 [INFO] c.i.m.s.impl.FinanceServiceImpl - Calculated payable amount : 0
+2026-05-28 15:03:53 [INFO] c.i.m.s.impl.FinanceServiceImpl - Net business calculated : 0
+2026-05-28 15:03:53 [INFO] c.i.m.s.impl.FinanceServiceImpl - Finance dashboard loaded successfully
+2026-05-28 15:03:53 [INFO] c.i.m.s.impl.FinanceServiceImpl - Cash : 0 | UPI : 0 | Card : 0
+2026-05-28 15:03:53 [INFO] c.i.m.service.impl.MasterServiceImpl - Total suppliers fetched : 0
+2026-05-28 15:03:55 [INFO] c.i.m.service.impl.MasterServiceImpl - Total active categories fetched : 0
+2026-05-28 15:03:55 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/categories
+2026-05-28 15:03:55 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/masters/customers
+2026-05-28 15:03:55 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/customers
+2026-05-28 15:03:55 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/categories
+2026-05-28 15:03:55 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching active categories
+2026-05-28 15:03:55 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/customers
+2026-05-28 15:03:55 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching customers
+2026-05-28 15:03:56 [INFO] c.i.m.service.impl.MasterServiceImpl - Total customers fetched : 0
+2026-05-28 15:03:57 [INFO] c.i.m.service.impl.MasterServiceImpl - Total active categories fetched : 0
+2026-05-28 15:03:57 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/customers
+2026-05-28 15:03:57 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/customers
+2026-05-28 15:03:57 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching customers
+2026-05-28 15:03:58 [DEBUG] o.s.security.web.FilterChainProxy - Securing POST /api/masters/categories
+2026-05-28 15:03:58 [DEBUG] o.s.security.web.FilterChainProxy - Secured POST /api/masters/categories
+2026-05-28 15:03:58 [INFO] c.i.m.service.impl.MasterServiceImpl - Creating category : Groceries
+2026-05-28 15:03:58 [INFO] c.i.m.service.impl.MasterServiceImpl - Total customers fetched : 0
+2026-05-28 15:04:00 [INFO] c.i.m.service.impl.MasterServiceImpl - Category created successfully : Groceries
+2026-05-28 15:04:00 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/suppliers
+2026-05-28 15:04:00 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/suppliers
+2026-05-28 15:04:00 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching suppliers
+2026-05-28 15:04:01 [INFO] c.i.m.service.impl.MasterServiceImpl - Total suppliers fetched : 0
+2026-05-28 15:04:01 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/categories
+2026-05-28 15:04:01 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/categories
+2026-05-28 15:04:01 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching active categories
+2026-05-28 15:04:03 [INFO] c.i.m.service.impl.MasterServiceImpl - Total active categories fetched : 1
+2026-05-28 15:04:03 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/customers
+2026-05-28 15:04:03 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/customers
+2026-05-28 15:04:03 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching customers
+2026-05-28 15:04:04 [INFO] c.i.m.service.impl.MasterServiceImpl - Total customers fetched : 0
+2026-05-28 15:04:13 [DEBUG] o.s.security.web.FilterChainProxy - Securing POST /api/masters/suppliers
+2026-05-28 15:04:13 [DEBUG] o.s.security.web.FilterChainProxy - Secured POST /api/masters/suppliers
+2026-05-28 15:04:13 [INFO] c.i.m.service.impl.MasterServiceImpl - Adding supplier : Zepto
+2026-05-28 15:04:16 [INFO] c.i.m.service.impl.MasterServiceImpl - Supplier added successfully : Zepto
+2026-05-28 15:04:16 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/suppliers
+2026-05-28 15:04:16 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/suppliers
+2026-05-28 15:04:16 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching suppliers
+2026-05-28 15:04:17 [INFO] c.i.m.service.impl.MasterServiceImpl - Total suppliers fetched : 1
+2026-05-28 15:04:17 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/categories
+2026-05-28 15:04:17 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/categories
+2026-05-28 15:04:17 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching active categories
+2026-05-28 15:04:19 [INFO] c.i.m.service.impl.MasterServiceImpl - Total active categories fetched : 1
+2026-05-28 15:04:19 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/customers
+2026-05-28 15:04:19 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/customers
+2026-05-28 15:04:19 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching customers
+2026-05-28 15:04:20 [INFO] c.i.m.service.impl.MasterServiceImpl - Total customers fetched : 0
+2026-05-28 15:04:34 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:04:34 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products/stats
+2026-05-28 15:04:34 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/categories
+2026-05-28 15:04:34 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products/stats
+2026-05-28 15:04:34 [INFO] c.i.m.controller.ProductController - API Product Stats
+2026-05-28 15:04:34 [INFO] c.i.m.s.impl.ProductServiceImpl - Generating product statistics
+2026-05-28 15:04:34 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/categories
+2026-05-28 15:04:34 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching active categories
+2026-05-28 15:04:34 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:04:34 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:04:34 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:04:35 [INFO] c.i.m.s.impl.ProductServiceImpl - Stats generated successfully
+2026-05-28 15:04:35 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products/stats
+2026-05-28 15:04:35 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products/stats
+2026-05-28 15:04:35 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 0
+2026-05-28 15:04:35 [INFO] c.i.m.controller.ProductController - API Product Stats
+2026-05-28 15:04:35 [INFO] c.i.m.s.impl.ProductServiceImpl - Generating product statistics
+2026-05-28 15:04:35 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:04:35 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:04:35 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:04:35 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:04:35 [INFO] c.i.m.s.impl.ProductServiceImpl - Stats generated successfully
+2026-05-28 15:04:35 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 0
+2026-05-28 15:04:36 [INFO] c.i.m.service.impl.MasterServiceImpl - Total active categories fetched : 1
+2026-05-28 15:04:36 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/categories
+2026-05-28 15:04:36 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/categories
+2026-05-28 15:04:36 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching active categories
+2026-05-28 15:04:39 [INFO] c.i.m.service.impl.MasterServiceImpl - Total active categories fetched : 1
+2026-05-28 15:05:17 [DEBUG] o.s.security.web.FilterChainProxy - Securing POST /api/products
+2026-05-28 15:05:17 [DEBUG] o.s.security.web.FilterChainProxy - Secured POST /api/products
+2026-05-28 15:05:17 [INFO] c.i.m.controller.ProductController - API Create Product called
+2026-05-28 15:05:19 [INFO] c.i.m.s.impl.ProductServiceImpl - Creating product : Orid dhal 1kg
+2026-05-28 15:05:19 [INFO] c.i.m.s.impl.ProductServiceImpl - Generated SKU : ORI-8620
+2026-05-28 15:05:20 [INFO] c.i.m.s.impl.ProductServiceImpl - Product created successfully : Orid dhal 1kg | SKU : ORI-8620
+2026-05-28 15:05:20 [INFO] c.i.m.controller.ProductController - API Product created : Orid dhal 1kg
+2026-05-28 15:05:20 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:05:20 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:05:20 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:05:20 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:05:20 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products/stats
+2026-05-28 15:05:20 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products/stats
+2026-05-28 15:05:20 [INFO] c.i.m.controller.ProductController - API Product Stats
+2026-05-28 15:05:20 [INFO] c.i.m.s.impl.ProductServiceImpl - Generating product statistics
+2026-05-28 15:05:21 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 1
+2026-05-28 15:05:21 [INFO] c.i.m.s.impl.ProductServiceImpl - Stats generated successfully
+2026-05-28 15:05:26 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:05:26 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:05:26 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:05:26 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:05:28 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 1
+2026-05-28 15:05:28 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:05:28 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/suppliers
+2026-05-28 15:05:28 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:05:28 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:05:28 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:05:28 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/suppliers
+2026-05-28 15:05:28 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching suppliers
+2026-05-28 15:05:30 [INFO] c.i.m.service.impl.MasterServiceImpl - Total suppliers fetched : 1
+2026-05-28 15:05:30 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/procurement
+2026-05-28 15:05:30 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/procurement
+2026-05-28 15:05:30 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/procurement
+2026-05-28 15:05:30 [INFO] c.i.m.c.ProcurementController - API Fetch Procurement History
+2026-05-28 15:05:30 [INFO] c.i.m.s.impl.ProcurementServiceImpl - Fetching procurement history
+2026-05-28 15:05:30 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 1
+2026-05-28 15:05:30 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/suppliers
+2026-05-28 15:05:30 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/suppliers
+2026-05-28 15:05:30 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching suppliers
+2026-05-28 15:05:31 [INFO] c.i.m.s.impl.ProcurementServiceImpl - Total procurement records : 0
+2026-05-28 15:05:31 [INFO] c.i.m.service.impl.MasterServiceImpl - Total suppliers fetched : 1
+2026-05-28 15:05:31 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/procurement
+2026-05-28 15:05:31 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/procurement
+2026-05-28 15:05:31 [INFO] c.i.m.c.ProcurementController - API Fetch Procurement History
+2026-05-28 15:05:31 [INFO] c.i.m.s.impl.ProcurementServiceImpl - Fetching procurement history
+2026-05-28 15:05:32 [INFO] c.i.m.s.impl.ProcurementServiceImpl - Total procurement records : 0
+2026-05-28 15:05:57 [DEBUG] o.s.security.web.FilterChainProxy - Securing POST /api/procurement
+2026-05-28 15:05:57 [DEBUG] o.s.security.web.FilterChainProxy - Secured POST /api/procurement
+2026-05-28 15:05:57 [INFO] c.i.m.s.impl.ProcurementServiceImpl - Manual procurement started
+2026-05-28 15:06:00 [INFO] c.i.m.s.impl.InventoryServiceImpl - Stock increase started for : Orid dhal 1kg
+2026-05-28 15:06:00 [INFO] c.i.m.s.impl.InventoryServiceImpl - Stock increased for Orid dhal 1kg | Previous : 0 | Added : 20 | Current : 20
+2026-05-28 15:06:00 [INFO] c.i.m.s.impl.InventoryServiceImpl - Saving inventory transaction for : Orid dhal 1kg
+2026-05-28 15:06:01 [INFO] c.i.m.s.impl.InventoryServiceImpl - Inventory transaction saved | Product : Orid dhal 1kg | Type : PURCHASE | Qty : 20
+2026-05-28 15:06:01 [INFO] c.i.m.s.impl.InventoryServiceImpl - Stock increase completed for : Orid dhal 1kg
+2026-05-28 15:06:01 [INFO] c.i.m.s.impl.ProcurementServiceImpl - Procurement saved successfully | Product : Orid dhal 1kg | Qty : 20
+2026-05-28 15:06:04 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:06:04 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:06:04 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:06:04 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:06:06 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 1
+2026-05-28 15:06:06 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/suppliers
+2026-05-28 15:06:06 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/suppliers
+2026-05-28 15:06:06 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching suppliers
+2026-05-28 15:06:07 [INFO] c.i.m.service.impl.MasterServiceImpl - Total suppliers fetched : 1
+2026-05-28 15:06:07 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/procurement
+2026-05-28 15:06:07 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/procurement
+2026-05-28 15:06:07 [INFO] c.i.m.c.ProcurementController - API Fetch Procurement History
+2026-05-28 15:06:07 [INFO] c.i.m.s.impl.ProcurementServiceImpl - Fetching procurement history
+2026-05-28 15:06:09 [INFO] c.i.m.s.impl.ProcurementServiceImpl - Total procurement records : 1
+2026-05-28 15:06:20 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/procurement/payment/1?amount=1700
+2026-05-28 15:06:20 [DEBUG] o.s.security.web.FilterChainProxy - Securing PUT /api/procurement/payment/1?amount=1700
+2026-05-28 15:06:20 [DEBUG] o.s.security.web.FilterChainProxy - Secured PUT /api/procurement/payment/1?amount=1700
+2026-05-28 15:06:20 [INFO] c.i.m.c.ProcurementController - API Procurement Payment Update | ID : 1 | Amount : 1700.0
+2026-05-28 15:06:21 [INFO] c.i.m.s.impl.ProcurementServiceImpl - Updating procurement payment | ID : 1 | Amount : 1700.0
+2026-05-28 15:06:21 [INFO] c.i.m.s.impl.ProcurementServiceImpl - Procurement partially paid : 1
+2026-05-28 15:06:21 [INFO] c.i.m.s.impl.ProcurementServiceImpl - Payment updated successfully for procurement ID : 1
+2026-05-28 15:06:23 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:06:23 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:06:23 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:06:23 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:06:25 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 1
+2026-05-28 15:06:25 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/suppliers
+2026-05-28 15:06:25 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/suppliers
+2026-05-28 15:06:25 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching suppliers
+2026-05-28 15:06:27 [INFO] c.i.m.service.impl.MasterServiceImpl - Total suppliers fetched : 1
+2026-05-28 15:06:27 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/procurement
+2026-05-28 15:06:27 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/procurement
+2026-05-28 15:06:27 [INFO] c.i.m.c.ProcurementController - API Fetch Procurement History
+2026-05-28 15:06:27 [INFO] c.i.m.s.impl.ProcurementServiceImpl - Fetching procurement history
+2026-05-28 15:06:29 [INFO] c.i.m.s.impl.ProcurementServiceImpl - Total procurement records : 1
+2026-05-28 15:06:34 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:06:34 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products/stats
+2026-05-28 15:06:34 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/categories
+2026-05-28 15:06:34 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:06:34 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:06:34 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:06:34 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products/stats
+2026-05-28 15:06:34 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/categories
+2026-05-28 15:06:34 [INFO] c.i.m.controller.ProductController - API Product Stats
+2026-05-28 15:06:34 [INFO] c.i.m.s.impl.ProductServiceImpl - Generating product statistics
+2026-05-28 15:06:34 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching active categories
+2026-05-28 15:06:35 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 1
+2026-05-28 15:06:35 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:06:35 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:06:35 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:06:35 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:06:36 [INFO] c.i.m.s.impl.ProductServiceImpl - Stats generated successfully
+2026-05-28 15:06:36 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products/stats
+2026-05-28 15:06:36 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products/stats
+2026-05-28 15:06:36 [INFO] c.i.m.controller.ProductController - API Product Stats
+2026-05-28 15:06:36 [INFO] c.i.m.s.impl.ProductServiceImpl - Generating product statistics
+2026-05-28 15:06:36 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 1
+2026-05-28 15:06:36 [INFO] c.i.m.service.impl.MasterServiceImpl - Total active categories fetched : 1
+2026-05-28 15:06:36 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/categories
+2026-05-28 15:06:36 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/categories
+2026-05-28 15:06:36 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching active categories
+2026-05-28 15:06:36 [INFO] c.i.m.s.impl.ProductServiceImpl - Stats generated successfully
+2026-05-28 15:06:38 [INFO] c.i.m.service.impl.MasterServiceImpl - Total active categories fetched : 1
+2026-05-28 15:06:44 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/products/scan/8900987890999
+2026-05-28 15:06:44 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products/scan/8900987890999
+2026-05-28 15:06:44 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products/scan/8900987890999
+2026-05-28 15:06:44 [INFO] c.i.m.controller.ProductController - API Barcode Scan : 8900987890999
+2026-05-28 15:06:45 [INFO] c.i.m.controller.ProductController - Barcode matched : Orid dhal 1kg
+2026-05-28 15:06:53 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/billing/checkout
+2026-05-28 15:06:53 [DEBUG] o.s.security.web.FilterChainProxy - Securing POST /api/billing/checkout
+2026-05-28 15:06:53 [DEBUG] o.s.security.web.FilterChainProxy - Secured POST /api/billing/checkout
+2026-05-28 15:06:53 [INFO] c.i.m.controller.BillingController - API Checkout request received
+2026-05-28 15:06:53 [INFO] c.i.m.s.impl.BillingServiceImpl - Checkout started
+2026-05-28 15:06:53 [INFO] c.i.m.s.impl.BillingServiceImpl - Customer : Walk-in Customer
+2026-05-28 15:06:53 [INFO] c.i.m.s.impl.BillingServiceImpl - Payment mode : CASH
+2026-05-28 15:06:53 [INFO] c.i.m.s.impl.BillingServiceImpl - Generated bill number : INV-e1592688
+2026-05-28 15:06:56 [INFO] c.i.m.s.impl.BillingServiceImpl - Selling product : Orid dhal 1kg | Qty : 1
+2026-05-28 15:06:56 [INFO] c.i.m.s.impl.InventoryServiceImpl - Stock decrease started for : Orid dhal 1kg
+2026-05-28 15:06:57 [INFO] c.i.m.s.impl.InventoryServiceImpl - Stock reduced for Orid dhal 1kg | Previous : 20 | Reduced : 1 | Remaining : 19
+2026-05-28 15:06:57 [INFO] c.i.m.s.impl.InventoryServiceImpl - Saving inventory transaction for : Orid dhal 1kg
+2026-05-28 15:06:57 [INFO] c.i.m.s.impl.InventoryServiceImpl - Inventory transaction saved | Product : Orid dhal 1kg | Type : SALE | Qty : 1
+2026-05-28 15:06:57 [INFO] c.i.m.s.impl.InventoryServiceImpl - Stock decrease completed for : Orid dhal 1kg
+2026-05-28 15:06:58 [INFO] c.i.m.s.impl.BillingServiceImpl - Invoice INV-e1592688 completed successfully. Grand Total : 120.750
+2026-05-28 15:07:03 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/settings
+2026-05-28 15:07:03 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/settings
+2026-05-28 15:07:03 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/settings
+2026-05-28 15:07:03 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/settings
+2026-05-28 15:07:03 [INFO] c.i.m.s.impl.SettingsServiceImpl - Fetching application settings
+2026-05-28 15:07:05 [WARN] c.i.m.s.impl.SettingsServiceImpl - Settings not found, creating default settings
+2026-05-28 15:07:06 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/finance/dashboard
+2026-05-28 15:07:06 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/finance/dashboard
+2026-05-28 15:07:06 [INFO] c.i.m.s.impl.FinanceServiceImpl - Finance dashboard calculation started
+2026-05-28 15:07:06 [INFO] c.i.m.s.impl.SettingsServiceImpl - Default settings created successfully
+2026-05-28 15:07:06 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/settings
+2026-05-28 15:07:06 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/settings
+2026-05-28 15:07:06 [INFO] c.i.m.s.impl.SettingsServiceImpl - Fetching application settings
+2026-05-28 15:07:10 [INFO] c.i.m.s.impl.FinanceServiceImpl - Fetched sales records : 1
+2026-05-28 15:07:10 [INFO] c.i.m.s.impl.FinanceServiceImpl - Fetched procurement records : 1
+2026-05-28 15:07:10 [INFO] c.i.m.s.impl.FinanceServiceImpl - Sales calculation completed | Total Sales : 120.75
+2026-05-28 15:07:10 [INFO] c.i.m.s.impl.FinanceServiceImpl - Calculated payable amount : 300.00
+2026-05-28 15:07:10 [INFO] c.i.m.s.impl.FinanceServiceImpl - Net business calculated : -179.25
+2026-05-28 15:07:10 [INFO] c.i.m.s.impl.FinanceServiceImpl - Finance dashboard loaded successfully
+2026-05-28 15:07:10 [INFO] c.i.m.s.impl.FinanceServiceImpl - Cash : 121.00 | UPI : 0.00 | Card : 0.00
+2026-05-28 15:07:10 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/finance/dashboard
+2026-05-28 15:07:10 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/finance/dashboard
+2026-05-28 15:07:10 [INFO] c.i.m.s.impl.FinanceServiceImpl - Finance dashboard calculation started
+2026-05-28 15:07:13 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/suppliers
+2026-05-28 15:07:13 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/suppliers
+2026-05-28 15:07:13 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching suppliers
+2026-05-28 15:07:13 [INFO] c.i.m.s.impl.FinanceServiceImpl - Fetched sales records : 1
+2026-05-28 15:07:13 [INFO] c.i.m.s.impl.FinanceServiceImpl - Fetched procurement records : 1
+2026-05-28 15:07:13 [INFO] c.i.m.s.impl.FinanceServiceImpl - Sales calculation completed | Total Sales : 120.75
+2026-05-28 15:07:13 [INFO] c.i.m.s.impl.FinanceServiceImpl - Calculated payable amount : 300.00
+2026-05-28 15:07:13 [INFO] c.i.m.s.impl.FinanceServiceImpl - Net business calculated : -179.25
+2026-05-28 15:07:13 [INFO] c.i.m.s.impl.FinanceServiceImpl - Finance dashboard loaded successfully
+2026-05-28 15:07:13 [INFO] c.i.m.s.impl.FinanceServiceImpl - Cash : 121.00 | UPI : 0.00 | Card : 0.00
+2026-05-28 15:07:15 [INFO] c.i.m.service.impl.MasterServiceImpl - Total suppliers fetched : 1
+2026-05-28 15:07:15 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/suppliers
+2026-05-28 15:07:15 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/categories
+2026-05-28 15:07:15 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/suppliers
+2026-05-28 15:07:15 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching suppliers
+2026-05-28 15:07:15 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/categories
+2026-05-28 15:07:15 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching active categories
+2026-05-28 15:07:17 [INFO] c.i.m.service.impl.MasterServiceImpl - Total suppliers fetched : 1
+2026-05-28 15:07:17 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/reports/dashboard
+2026-05-28 15:07:17 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/reports/dashboard
+2026-05-28 15:07:17 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loading started
+2026-05-28 15:07:19 [INFO] c.i.m.service.impl.MasterServiceImpl - Total active categories fetched : 1
+2026-05-28 15:07:19 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/categories
+2026-05-28 15:07:19 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/customers
+2026-05-28 15:07:19 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/categories
+2026-05-28 15:07:19 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching active categories
+2026-05-28 15:07:19 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/customers
+2026-05-28 15:07:19 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching customers
+2026-05-28 15:07:20 [INFO] c.i.m.service.impl.MasterServiceImpl - Total customers fetched : 0
+2026-05-28 15:07:20 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/inventory/history
+2026-05-28 15:07:20 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/inventory
+2026-05-28 15:07:20 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/inventory
+2026-05-28 15:07:20 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/inventory/history
+2026-05-28 15:07:20 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched products : 1
+2026-05-28 15:07:20 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched sale items : 1
+2026-05-28 15:07:20 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated total revenue : 115.0
+2026-05-28 15:07:20 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated inventory value : 2185.0
+2026-05-28 15:07:20 [INFO] c.i.m.service.impl.ReportServiceImpl - Top selling products calculated
+2026-05-28 15:07:20 [INFO] c.i.m.service.impl.ReportServiceImpl - Category analytics prepared
+2026-05-28 15:07:21 [INFO] c.i.m.service.impl.ReportServiceImpl - Sales report generated | Transactions : 1
+2026-05-28 15:07:22 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/inventory
+2026-05-28 15:07:22 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/inventory
+2026-05-28 15:07:22 [INFO] c.i.m.service.impl.ReportServiceImpl - Purchase report generated | Records : 1
+2026-05-28 15:07:22 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loaded successfully
+2026-05-28 15:07:22 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/reports/dashboard
+2026-05-28 15:07:22 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/reports/dashboard
+2026-05-28 15:07:22 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loading started
+2026-05-28 15:07:23 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/inventory/history
+2026-05-28 15:07:23 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/inventory/history
+2026-05-28 15:07:23 [INFO] c.i.m.service.impl.MasterServiceImpl - Total active categories fetched : 1
+2026-05-28 15:07:23 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/customers
+2026-05-28 15:07:23 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/customers
+2026-05-28 15:07:23 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching customers
+2026-05-28 15:07:24 [INFO] c.i.m.service.impl.MasterServiceImpl - Total customers fetched : 0
+2026-05-28 15:07:25 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched products : 1
+2026-05-28 15:07:25 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched sale items : 1
+2026-05-28 15:07:25 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated total revenue : 115.0
+2026-05-28 15:07:25 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated inventory value : 2185.0
+2026-05-28 15:07:25 [INFO] c.i.m.service.impl.ReportServiceImpl - Top selling products calculated
+2026-05-28 15:07:25 [INFO] c.i.m.service.impl.ReportServiceImpl - Category analytics prepared
+2026-05-28 15:07:26 [INFO] c.i.m.service.impl.ReportServiceImpl - Sales report generated | Transactions : 1
+2026-05-28 15:07:27 [INFO] c.i.m.service.impl.ReportServiceImpl - Purchase report generated | Records : 1
+2026-05-28 15:07:27 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loaded successfully
+2026-05-28 15:07:27 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/reports/dashboard
+2026-05-28 15:07:27 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/reports/dashboard
+2026-05-28 15:07:27 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loading started
+2026-05-28 15:07:29 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched products : 1
+2026-05-28 15:07:29 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched sale items : 1
+2026-05-28 15:07:29 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated total revenue : 115.0
+2026-05-28 15:07:29 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated inventory value : 2185.0
+2026-05-28 15:07:29 [INFO] c.i.m.service.impl.ReportServiceImpl - Top selling products calculated
+2026-05-28 15:07:29 [INFO] c.i.m.service.impl.ReportServiceImpl - Category analytics prepared
+2026-05-28 15:07:29 [INFO] c.i.m.service.impl.ReportServiceImpl - Sales report generated | Transactions : 1
+2026-05-28 15:07:30 [INFO] c.i.m.service.impl.ReportServiceImpl - Purchase report generated | Records : 1
+2026-05-28 15:07:30 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loaded successfully
+2026-05-28 15:07:30 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/reports/dashboard
+2026-05-28 15:07:30 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/reports/dashboard
+2026-05-28 15:07:30 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loading started
+2026-05-28 15:07:32 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched products : 1
+2026-05-28 15:07:32 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched sale items : 1
+2026-05-28 15:07:32 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated total revenue : 115.0
+2026-05-28 15:07:32 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated inventory value : 2185.0
+2026-05-28 15:07:32 [INFO] c.i.m.service.impl.ReportServiceImpl - Top selling products calculated
+2026-05-28 15:07:32 [INFO] c.i.m.service.impl.ReportServiceImpl - Category analytics prepared
+2026-05-28 15:07:33 [INFO] c.i.m.service.impl.ReportServiceImpl - Sales report generated | Transactions : 1
+2026-05-28 15:07:33 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/suppliers
+2026-05-28 15:07:33 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/suppliers
+2026-05-28 15:07:33 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching suppliers
+2026-05-28 15:07:34 [INFO] c.i.m.service.impl.ReportServiceImpl - Purchase report generated | Records : 1
+2026-05-28 15:07:34 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loaded successfully
+2026-05-28 15:07:35 [INFO] c.i.m.service.impl.MasterServiceImpl - Total suppliers fetched : 1
+2026-05-28 15:07:35 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/suppliers
+2026-05-28 15:07:35 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/categories
+2026-05-28 15:07:35 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/suppliers
+2026-05-28 15:07:35 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/categories
+2026-05-28 15:07:35 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching suppliers
+2026-05-28 15:07:35 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching active categories
+2026-05-28 15:07:36 [INFO] c.i.m.service.impl.MasterServiceImpl - Total suppliers fetched : 1
+2026-05-28 15:07:39 [INFO] c.i.m.service.impl.MasterServiceImpl - Total active categories fetched : 1
+2026-05-28 15:07:39 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/categories
+2026-05-28 15:07:39 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/customers
+2026-05-28 15:07:39 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/categories
+2026-05-28 15:07:39 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/customers
+2026-05-28 15:07:39 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching active categories
+2026-05-28 15:07:39 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching customers
+2026-05-28 15:07:39 [INFO] c.i.m.service.impl.MasterServiceImpl - Total customers fetched : 0
+2026-05-28 15:07:42 [INFO] c.i.m.service.impl.MasterServiceImpl - Total active categories fetched : 1
+2026-05-28 15:07:42 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/customers
+2026-05-28 15:07:42 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/customers
+2026-05-28 15:07:42 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching customers
+2026-05-28 15:07:43 [INFO] c.i.m.service.impl.MasterServiceImpl - Total customers fetched : 0
+2026-05-28 15:07:49 [WARN] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@8e179c4 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-05-28 15:07:50 [WARN] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6981e3f6 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-05-28 15:07:51 [WARN] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6aad885b (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-05-28 15:08:09 [WARN] com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1d854e9f (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-05-28 15:08:22 [DEBUG] o.s.security.web.FilterChainProxy - Securing POST /api/auth/login
+2026-05-28 15:08:22 [DEBUG] o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+2026-05-28 15:08:22 [DEBUG] o.s.security.web.FilterChainProxy - Secured POST /api/auth/login
+2026-05-28 15:08:23 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:08:23 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:08:23 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:08:23 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:08:23 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/reports/dashboard
+2026-05-28 15:08:23 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/reports/dashboard
+2026-05-28 15:08:23 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loading started
+2026-05-28 15:08:23 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 1
+2026-05-28 15:08:24 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:08:24 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:08:24 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:08:24 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:08:24 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 1
+2026-05-28 15:08:25 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched products : 1
+2026-05-28 15:08:25 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched sale items : 1
+2026-05-28 15:08:25 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated total revenue : 115.0
+2026-05-28 15:08:25 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated inventory value : 2185.0
+2026-05-28 15:08:25 [INFO] c.i.m.service.impl.ReportServiceImpl - Top selling products calculated
+2026-05-28 15:08:25 [INFO] c.i.m.service.impl.ReportServiceImpl - Category analytics prepared
+2026-05-28 15:08:25 [INFO] c.i.m.service.impl.ReportServiceImpl - Sales report generated | Transactions : 1
+2026-05-28 15:08:26 [INFO] c.i.m.service.impl.ReportServiceImpl - Purchase report generated | Records : 1
+2026-05-28 15:08:26 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loaded successfully
+2026-05-28 15:08:26 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/reports/dashboard
+2026-05-28 15:08:26 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/reports/dashboard
+2026-05-28 15:08:26 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loading started
+2026-05-28 15:08:27 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched products : 1
+2026-05-28 15:08:27 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched sale items : 1
+2026-05-28 15:08:27 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated total revenue : 115.0
+2026-05-28 15:08:27 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated inventory value : 2185.0
+2026-05-28 15:08:27 [INFO] c.i.m.service.impl.ReportServiceImpl - Top selling products calculated
+2026-05-28 15:08:27 [INFO] c.i.m.service.impl.ReportServiceImpl - Category analytics prepared
+2026-05-28 15:08:27 [INFO] c.i.m.service.impl.ReportServiceImpl - Sales report generated | Transactions : 1
+2026-05-28 15:08:28 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:08:28 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:08:28 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:08:28 [INFO] c.i.m.service.impl.ReportServiceImpl - Purchase report generated | Records : 1
+2026-05-28 15:08:28 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:08:28 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loaded successfully
+2026-05-28 15:08:28 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 1
+2026-05-28 15:08:28 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:08:28 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/suppliers
+2026-05-28 15:08:28 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:08:28 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:08:28 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:08:28 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/suppliers
+2026-05-28 15:08:28 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching suppliers
+2026-05-28 15:08:29 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 1
+2026-05-28 15:08:29 [INFO] c.i.m.service.impl.MasterServiceImpl - Total suppliers fetched : 1
+2026-05-28 15:08:29 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/suppliers
+2026-05-28 15:08:29 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/procurement
+2026-05-28 15:08:29 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/suppliers
+2026-05-28 15:08:29 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching suppliers
+2026-05-28 15:08:29 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/procurement
+2026-05-28 15:08:29 [INFO] c.i.m.c.ProcurementController - API Fetch Procurement History
+2026-05-28 15:08:29 [INFO] c.i.m.s.impl.ProcurementServiceImpl - Fetching procurement history
+2026-05-28 15:08:30 [INFO] c.i.m.service.impl.MasterServiceImpl - Total suppliers fetched : 1
+2026-05-28 15:08:30 [INFO] c.i.m.s.impl.ProcurementServiceImpl - Total procurement records : 1
+2026-05-28 15:08:30 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/procurement
+2026-05-28 15:08:30 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/procurement
+2026-05-28 15:08:30 [INFO] c.i.m.c.ProcurementController - API Fetch Procurement History
+2026-05-28 15:08:30 [INFO] c.i.m.s.impl.ProcurementServiceImpl - Fetching procurement history
+2026-05-28 15:08:31 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products/stats
+2026-05-28 15:08:31 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/categories
+2026-05-28 15:08:31 [INFO] c.i.m.s.impl.ProcurementServiceImpl - Total procurement records : 1
+2026-05-28 15:08:31 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:08:31 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/categories
+2026-05-28 15:08:31 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching active categories
+2026-05-28 15:08:31 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:08:31 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products/stats
+2026-05-28 15:08:31 [INFO] c.i.m.controller.ProductController - API Product Stats
+2026-05-28 15:08:31 [INFO] c.i.m.s.impl.ProductServiceImpl - Generating product statistics
+2026-05-28 15:08:31 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:08:31 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:08:32 [INFO] c.i.m.s.impl.ProductServiceImpl - Stats generated successfully
+2026-05-28 15:08:32 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products/stats
+2026-05-28 15:08:32 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products/stats
+2026-05-28 15:08:32 [INFO] c.i.m.controller.ProductController - API Product Stats
+2026-05-28 15:08:32 [INFO] c.i.m.s.impl.ProductServiceImpl - Generating product statistics
+2026-05-28 15:08:32 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 1
+2026-05-28 15:08:32 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products
+2026-05-28 15:08:32 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products
+2026-05-28 15:08:32 [INFO] c.i.m.controller.ProductController - API Fetch All Products
+2026-05-28 15:08:32 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching all products
+2026-05-28 15:08:32 [INFO] c.i.m.s.impl.ProductServiceImpl - Stats generated successfully
+2026-05-28 15:08:33 [INFO] c.i.m.s.impl.ProductServiceImpl - Total products fetched : 1
+2026-05-28 15:08:33 [INFO] c.i.m.service.impl.MasterServiceImpl - Total active categories fetched : 1
+2026-05-28 15:08:33 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/categories
+2026-05-28 15:08:33 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/categories
+2026-05-28 15:08:33 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching active categories
+2026-05-28 15:08:34 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/products/pending
+2026-05-28 15:08:34 [DEBUG] o.s.security.web.FilterChainProxy - Securing OPTIONS /api/products/pending
+2026-05-28 15:08:34 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products/pending
+2026-05-28 15:08:34 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products/pending
+2026-05-28 15:08:34 [INFO] c.i.m.controller.ProductController - API Fetch Pending Products
+2026-05-28 15:08:34 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching pending products
+2026-05-28 15:08:34 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/products/pending
+2026-05-28 15:08:34 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/products/pending
+2026-05-28 15:08:34 [INFO] c.i.m.controller.ProductController - API Fetch Pending Products
+2026-05-28 15:08:34 [INFO] c.i.m.s.impl.ProductServiceImpl - Fetching pending products
+2026-05-28 15:08:34 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/inventory
+2026-05-28 15:08:34 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/inventory/history
+2026-05-28 15:08:34 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/inventory/history
+2026-05-28 15:08:34 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/inventory
+2026-05-28 15:08:35 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/inventory
+2026-05-28 15:08:35 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/inventory
+2026-05-28 15:08:35 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/inventory/history
+2026-05-28 15:08:35 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/inventory/history
+2026-05-28 15:08:35 [INFO] c.i.m.service.impl.MasterServiceImpl - Total active categories fetched : 1
+2026-05-28 15:08:37 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/reports/dashboard
+2026-05-28 15:08:37 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/reports/dashboard
+2026-05-28 15:08:37 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loading started
+2026-05-28 15:08:39 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched products : 1
+2026-05-28 15:08:39 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched sale items : 1
+2026-05-28 15:08:39 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated total revenue : 115.0
+2026-05-28 15:08:39 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated inventory value : 2185.0
+2026-05-28 15:08:39 [INFO] c.i.m.service.impl.ReportServiceImpl - Top selling products calculated
+2026-05-28 15:08:39 [INFO] c.i.m.service.impl.ReportServiceImpl - Category analytics prepared
+2026-05-28 15:08:39 [INFO] c.i.m.service.impl.ReportServiceImpl - Sales report generated | Transactions : 1
+2026-05-28 15:08:40 [INFO] c.i.m.service.impl.ReportServiceImpl - Purchase report generated | Records : 1
+2026-05-28 15:08:40 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loaded successfully
+2026-05-28 15:08:40 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/reports/dashboard
+2026-05-28 15:08:40 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/reports/dashboard
+2026-05-28 15:08:40 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loading started
+2026-05-28 15:08:41 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/suppliers
+2026-05-28 15:08:41 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/suppliers
+2026-05-28 15:08:41 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching suppliers
+2026-05-28 15:08:41 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched products : 1
+2026-05-28 15:08:41 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched sale items : 1
+2026-05-28 15:08:41 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated total revenue : 115.0
+2026-05-28 15:08:41 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated inventory value : 2185.0
+2026-05-28 15:08:41 [INFO] c.i.m.service.impl.ReportServiceImpl - Top selling products calculated
+2026-05-28 15:08:41 [INFO] c.i.m.service.impl.ReportServiceImpl - Category analytics prepared
+2026-05-28 15:08:41 [INFO] c.i.m.service.impl.ReportServiceImpl - Sales report generated | Transactions : 1
+2026-05-28 15:08:42 [INFO] c.i.m.service.impl.MasterServiceImpl - Total suppliers fetched : 1
+2026-05-28 15:08:42 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/suppliers
+2026-05-28 15:08:42 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/categories
+2026-05-28 15:08:42 [INFO] c.i.m.service.impl.ReportServiceImpl - Purchase report generated | Records : 1
+2026-05-28 15:08:42 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loaded successfully
+2026-05-28 15:08:42 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/categories
+2026-05-28 15:08:42 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching active categories
+2026-05-28 15:08:42 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/suppliers
+2026-05-28 15:08:42 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching suppliers
+2026-05-28 15:08:42 [INFO] c.i.m.service.impl.MasterServiceImpl - Total suppliers fetched : 1
+2026-05-28 15:08:44 [INFO] c.i.m.service.impl.MasterServiceImpl - Total active categories fetched : 1
+2026-05-28 15:08:44 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/categories
+2026-05-28 15:08:44 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/customers
+2026-05-28 15:08:44 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/categories
+2026-05-28 15:08:44 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/customers
+2026-05-28 15:08:44 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching active categories
+2026-05-28 15:08:44 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching customers
+2026-05-28 15:08:44 [INFO] c.i.m.service.impl.MasterServiceImpl - Total customers fetched : 0
+2026-05-28 15:08:46 [INFO] c.i.m.service.impl.MasterServiceImpl - Total active categories fetched : 1
+2026-05-28 15:08:46 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/masters/customers
+2026-05-28 15:08:46 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/masters/customers
+2026-05-28 15:08:46 [INFO] c.i.m.service.impl.MasterServiceImpl - Fetching customers
+2026-05-28 15:08:46 [INFO] c.i.m.service.impl.MasterServiceImpl - Total customers fetched : 0
+2026-05-28 15:08:48 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/finance/dashboard
+2026-05-28 15:08:48 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/finance/dashboard
+2026-05-28 15:08:48 [INFO] c.i.m.s.impl.FinanceServiceImpl - Finance dashboard calculation started
+2026-05-28 15:08:50 [INFO] c.i.m.s.impl.FinanceServiceImpl - Fetched sales records : 1
+2026-05-28 15:08:50 [INFO] c.i.m.s.impl.FinanceServiceImpl - Fetched procurement records : 1
+2026-05-28 15:08:50 [INFO] c.i.m.s.impl.FinanceServiceImpl - Sales calculation completed | Total Sales : 120.75
+2026-05-28 15:08:50 [INFO] c.i.m.s.impl.FinanceServiceImpl - Calculated payable amount : 300.00
+2026-05-28 15:08:50 [INFO] c.i.m.s.impl.FinanceServiceImpl - Net business calculated : -179.25
+2026-05-28 15:08:50 [INFO] c.i.m.s.impl.FinanceServiceImpl - Finance dashboard loaded successfully
+2026-05-28 15:08:50 [INFO] c.i.m.s.impl.FinanceServiceImpl - Cash : 121.00 | UPI : 0.00 | Card : 0.00
+2026-05-28 15:08:50 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/finance/dashboard
+2026-05-28 15:08:50 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/finance/dashboard
+2026-05-28 15:08:50 [INFO] c.i.m.s.impl.FinanceServiceImpl - Finance dashboard calculation started
+2026-05-28 15:08:51 [INFO] c.i.m.s.impl.FinanceServiceImpl - Fetched sales records : 1
+2026-05-28 15:08:51 [INFO] c.i.m.s.impl.FinanceServiceImpl - Fetched procurement records : 1
+2026-05-28 15:08:51 [INFO] c.i.m.s.impl.FinanceServiceImpl - Sales calculation completed | Total Sales : 120.75
+2026-05-28 15:08:51 [INFO] c.i.m.s.impl.FinanceServiceImpl - Calculated payable amount : 300.00
+2026-05-28 15:08:51 [INFO] c.i.m.s.impl.FinanceServiceImpl - Net business calculated : -179.25
+2026-05-28 15:08:51 [INFO] c.i.m.s.impl.FinanceServiceImpl - Finance dashboard loaded successfully
+2026-05-28 15:08:51 [INFO] c.i.m.s.impl.FinanceServiceImpl - Cash : 121.00 | UPI : 0.00 | Card : 0.00
+2026-05-28 15:08:56 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/settings
+2026-05-28 15:08:56 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/settings
+2026-05-28 15:08:56 [INFO] c.i.m.s.impl.SettingsServiceImpl - Fetching application settings
+2026-05-28 15:08:56 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/settings
+2026-05-28 15:08:56 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/settings
+2026-05-28 15:08:56 [INFO] c.i.m.s.impl.SettingsServiceImpl - Fetching application settings
+2026-05-28 15:08:57 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/reports/dashboard
+2026-05-28 15:08:57 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/reports/dashboard
+2026-05-28 15:08:57 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loading started
+2026-05-28 15:08:58 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched products : 1
+2026-05-28 15:08:58 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched sale items : 1
+2026-05-28 15:08:58 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated total revenue : 115.0
+2026-05-28 15:08:58 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated inventory value : 2185.0
+2026-05-28 15:08:58 [INFO] c.i.m.service.impl.ReportServiceImpl - Top selling products calculated
+2026-05-28 15:08:58 [INFO] c.i.m.service.impl.ReportServiceImpl - Category analytics prepared
+2026-05-28 15:08:59 [INFO] c.i.m.service.impl.ReportServiceImpl - Sales report generated | Transactions : 1
+2026-05-28 15:08:59 [INFO] c.i.m.service.impl.ReportServiceImpl - Purchase report generated | Records : 1
+2026-05-28 15:08:59 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loaded successfully
+2026-05-28 15:08:59 [DEBUG] o.s.security.web.FilterChainProxy - Securing GET /api/reports/dashboard
+2026-05-28 15:08:59 [DEBUG] o.s.security.web.FilterChainProxy - Secured GET /api/reports/dashboard
+2026-05-28 15:08:59 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loading started
+2026-05-28 15:09:00 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched products : 1
+2026-05-28 15:09:00 [INFO] c.i.m.service.impl.ReportServiceImpl - Fetched sale items : 1
+2026-05-28 15:09:00 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated total revenue : 115.0
+2026-05-28 15:09:00 [INFO] c.i.m.service.impl.ReportServiceImpl - Calculated inventory value : 2185.0
+2026-05-28 15:09:00 [INFO] c.i.m.service.impl.ReportServiceImpl - Top selling products calculated
+2026-05-28 15:09:00 [INFO] c.i.m.service.impl.ReportServiceImpl - Category analytics prepared
+2026-05-28 15:09:00 [INFO] c.i.m.service.impl.ReportServiceImpl - Sales report generated | Transactions : 1
+2026-05-28 15:09:01 [INFO] c.i.m.service.impl.ReportServiceImpl - Purchase report generated | Records : 1
+2026-05-28 15:09:01 [INFO] c.i.m.service.impl.ReportServiceImpl - Dashboard analytics loaded successfully
+2026-05-28 15:57:54 [INFO] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-28 15:57:54 [INFO] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-28 15:57:55 [INFO] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-28 15:57:55 [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-05-28 15:57:55 [INFO] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
