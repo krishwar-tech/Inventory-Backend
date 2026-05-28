@@ -1,18 +1,21 @@
 package com.inventory.management.controller;
 
-import com.inventory.management.entity.Procurement;
-
-import com.inventory.management.service.ProcurementService;
-
-import org.springframework.web.bind.annotation.*;
-
-import org.springframework.web.multipart.MultipartFile;
-
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.inventory.management.dto.ApiResponse;
+import com.inventory.management.entity.Procurement;
+import com.inventory.management.service.ProcurementService;
 
 @RestController
 @RequestMapping("/api/procurement")
@@ -21,58 +24,126 @@ public class ProcurementController {
 
 	private final ProcurementService service;
 
-	private static final Logger log = LoggerFactory.getLogger(ProcurementController.class);
+	private static final Logger log =
+			LoggerFactory.getLogger(ProcurementController.class);
 
 	public ProcurementController(ProcurementService service) {
-
 		this.service = service;
 	}
 
 	@GetMapping
-	public List<Procurement> getAll() {
+	public ResponseEntity<ApiResponse<List<Procurement>>> getAll() {
 
 		log.info("API Fetch Procurement History");
 
-		return service.getAll();
+		List<Procurement> data = service.getAll();
+
+		ApiResponse<List<Procurement>> response =
+				new ApiResponse<>(
+						true,
+						"Procurement history fetched successfully",
+						HttpStatus.OK.value(),
+						data,
+						LocalDateTime.now());
+
+		return ResponseEntity.ok(response);
 	}
 
 	@PostMapping("/import-excel")
-	public Map<String, Object> importExcel(@RequestParam("file") MultipartFile file) {
+	public ResponseEntity<ApiResponse<Map<String, Object>>> importExcel(
+			@RequestParam("file") MultipartFile file) {
 
 		log.info("API Excel Import Started");
 
-		return service.importExcel(file);
+		Map<String, Object> data = service.importExcel(file);
+
+		ApiResponse<Map<String, Object>> response =
+				new ApiResponse<>(
+						true,
+						"Excel imported successfully",
+						HttpStatus.OK.value(),
+						data,
+						LocalDateTime.now());
+
+		return ResponseEntity.ok(response);
 	}
 
 	@DeleteMapping("/{id}")
-	public String delete(@PathVariable Long id) {
+	public ResponseEntity<ApiResponse<String>> delete(
+			@PathVariable Long id) {
 
 		log.warn("API Delete Procurement : {}", id);
 
 		service.delete(id);
 
-		return "Deleted";
+		ApiResponse<String> response =
+				new ApiResponse<>(
+						true,
+						"Procurement deleted successfully",
+						HttpStatus.OK.value(),
+						"Deleted",
+						LocalDateTime.now());
+
+		return ResponseEntity.ok(response);
 	}
 
 	@PutMapping("/payment/{id}")
-	public Procurement updatePayment(@PathVariable Long id, @RequestParam Double amount) {
+	public ResponseEntity<ApiResponse<Procurement>> updatePayment(
+			@PathVariable Long id,
+			@RequestParam Double amount) {
 
-		log.info("API Procurement Payment Update | ID : {} | Amount : {}", id, amount);
+		log.info(
+				"API Procurement Payment Update | ID : {} | Amount : {}",
+				id,
+				amount);
 
-		return service.updatePayment(id, amount);
+		Procurement procurement =
+				service.updatePayment(id, amount);
+
+		ApiResponse<Procurement> response =
+				new ApiResponse<>(
+						true,
+						"Payment updated successfully",
+						HttpStatus.OK.value(),
+						procurement,
+						LocalDateTime.now());
+
+		return ResponseEntity.ok(response);
 	}
-	
+
 	@PostMapping
-	public Procurement save(@RequestBody Map<String, Object> body) {
+	public ResponseEntity<ApiResponse<Procurement>> save(
+			@RequestBody Map<String, Object> body) {
 
-	    Long productId = Long.valueOf(body.get("productId").toString());
+		Long productId =
+				Long.valueOf(body.get("productId").toString());
 
-	    Long supplierId = Long.valueOf(body.get("supplierId").toString());
+		Long supplierId =
+				Long.valueOf(body.get("supplierId").toString());
 
-	    Integer qty = Integer.valueOf(body.get("qty").toString());
+		Integer qty =
+				Integer.valueOf(body.get("qty").toString());
 
-	    Double costPrice = Double.valueOf(body.get("costPrice").toString());
+		Double costPrice =
+				Double.valueOf(body.get("costPrice").toString());
 
-	    return service.save(productId, supplierId, qty, costPrice);
+		Procurement procurement =
+				service.save(
+						productId,
+						supplierId,
+						qty,
+						costPrice);
+
+		ApiResponse<Procurement> response =
+				new ApiResponse<>(
+						true,
+						"Procurement created successfully",
+						HttpStatus.CREATED.value(),
+						procurement,
+						LocalDateTime.now());
+
+		return new ResponseEntity<>(
+				response,
+				HttpStatus.CREATED);
 	}
 }

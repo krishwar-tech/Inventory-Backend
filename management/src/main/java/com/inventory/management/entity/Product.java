@@ -1,11 +1,14 @@
 package com.inventory.management.entity;
 
 import jakarta.persistence.*;
+
 import lombok.Data;
 
 import java.math.BigDecimal;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import com.inventory.management.enums.ProductStatus;
 
 @Entity
 @Data
@@ -34,13 +37,14 @@ public class Product {
 
     private String unit = "pcs";
 
-    private String status = "ACTIVE";
+    @Enumerated(EnumType.STRING)
+    private ProductStatus status = ProductStatus.ACTIVE;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
     @JsonIgnoreProperties("products")
     private Category category;
-    
+
     @ManyToOne
     @JoinColumn(name = "tenant_id")
     private Tenant tenant;
