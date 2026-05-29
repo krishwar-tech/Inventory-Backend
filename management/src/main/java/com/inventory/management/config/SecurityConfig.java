@@ -59,29 +59,26 @@ public class SecurityConfig {
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource() {
 
-		CorsConfiguration configuration = new CorsConfiguration();
+		CorsConfiguration configuration =
+				new CorsConfiguration();
 
-		configuration.setAllowedOrigins(List.of(
-				"http://localhost:5173",
-				"https://dulcet-flan-922c7c.netlify.app"
-		));
+		configuration.setAllowedOriginPatterns(
+				List.of("*"));
 
-		configuration.setAllowedMethods(List.of(
-				"GET",
-				"POST",
-				"PUT",
-				"DELETE",
-				"OPTIONS"
-		));
+		configuration.setAllowedMethods(
+				List.of("*"));
 
-		configuration.setAllowedHeaders(List.of("*"));
+		configuration.setAllowedHeaders(
+				List.of("*"));
 
-		configuration.setAllowCredentials(true);
+		configuration.setAllowCredentials(false);
 
 		UrlBasedCorsConfigurationSource source =
 				new UrlBasedCorsConfigurationSource();
 
-		source.registerCorsConfiguration("/**", configuration);
+		source.registerCorsConfiguration(
+				"/**",
+				configuration);
 
 		return source;
 	}
