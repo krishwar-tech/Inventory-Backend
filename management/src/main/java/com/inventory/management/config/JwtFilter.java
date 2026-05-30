@@ -24,31 +24,21 @@ public class JwtFilter extends OncePerRequestFilter {
 	}
 
 	@Override
+	protected boolean shouldNotFilter(HttpServletRequest request) {
+
+		String path = request.getServletPath();
+
+		return path.startsWith("/api/auth/");
+	}
+
+	@Override
 	protected void doFilterInternal(
 			HttpServletRequest request,
 			HttpServletResponse response,
 			FilterChain filterChain)
 			throws ServletException, IOException {
 
-		if (request.getMethod().equals("OPTIONS")) {
-
-			response.setHeader(
-					"Access-Control-Allow-Origin",
-					"*");
-
-			response.setHeader(
-					"Access-Control-Allow-Methods",
-					"GET, POST, PUT, DELETE, OPTIONS");
-
-			response.setHeader(
-					"Access-Control-Allow-Headers",
-					"*");
-
-			response.setStatus(
-					HttpServletResponse.SC_OK);
-
-			return;
-		}
+		System.out.println("JWT FILTER HIT");
 
 		String authHeader =
 				request.getHeader("Authorization");
