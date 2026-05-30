@@ -97,17 +97,33 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public AuthResponse login(LoginRequest req) {
 
+        System.out.println("========== LOGIN DEBUG ==========");
+
+        System.out.println("INPUT USERNAME: " + req.getUsername());
+
+        System.out.println("INPUT PASSWORD: " + req.getPassword());
+
         User user =
                 userRepo.findByUsername(
                                 req.getUsername())
-                        .orElseThrow(() ->
-                                new UserNotFoundException(
-                                        "Invalid username"));
+                        .orElseThrow(() -> {
+
+                            System.out.println("USER NOT FOUND");
+
+                            return new UserNotFoundException(
+                                    "Invalid username");
+                        });
+
+        System.out.println("DB USER FOUND: " + user.getUsername());
+
+        System.out.println("DB HASH PASSWORD: " + user.getPassword());
 
         boolean matches =
                 passwordEncoder.matches(
                         req.getPassword(),
                         user.getPassword());
+
+        System.out.println("PASSWORD MATCH RESULT: " + matches);
 
         if (!matches) {
 
