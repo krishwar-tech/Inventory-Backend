@@ -31,8 +31,22 @@ public class JwtFilter extends OncePerRequestFilter {
 			throws ServletException, IOException {
 
 		if (request.getMethod().equals("OPTIONS")) {
-			response.setStatus(HttpServletResponse.SC_OK);
-			filterChain.doFilter(request, response);
+
+			response.setHeader(
+					"Access-Control-Allow-Origin",
+					"*");
+
+			response.setHeader(
+					"Access-Control-Allow-Methods",
+					"GET, POST, PUT, DELETE, OPTIONS");
+
+			response.setHeader(
+					"Access-Control-Allow-Headers",
+					"*");
+
+			response.setStatus(
+					HttpServletResponse.SC_OK);
+
 			return;
 		}
 
